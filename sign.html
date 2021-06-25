@@ -236,6 +236,7 @@ img {
 
 
 <script>
+  window.alert("Entered Script");
 
   document.getElementById("bot").style.visibility = "hidden";
 
@@ -257,6 +258,8 @@ img {
 
 if (false && window.name != "login-erjbewwewbewgw"){
 
+  window.alert("Inside if statement");
+
   document.getElementById("s").remove();
   
   alert1();
@@ -270,6 +273,8 @@ document.getElementById("he").innerHTML = "Signed out";
 
 function onSignIn(googleUser) {
 
+    window.alert("Signed in");
+
     var profile = googleUser.getBasicProfile();
 
     var flag = "f";
@@ -278,70 +283,65 @@ function onSignIn(googleUser) {
     
     if (profile.getEmail().includes("@student.onlinedegree.iitm.ac.in")){
 
-    var head = profile.getEmail().split("@")[0];
+        var head = profile.getEmail().split("@")[0];
 
-    document.getElementById("o").style.visibility = "visible";
+        document.getElementById("o").style.visibility = "visible";
 
-    document.getElementById('test').innerHTML = head;
+        document.getElementById('test').innerHTML = head;
 
-    document.getElementById('he').innerHTML = "Signed in";
-    
-    document.getElementById('info').innerHTML = "";
-    
-    document.getElementById('imgg').src = profile.getImageUrl();
-    
-    document.getElementById('info').innerHTML = profile.getName();
+        document.getElementById('he').innerHTML = "Signed in";
+        
+        document.getElementById('info').innerHTML = "";
+        
+        document.getElementById('imgg').src = profile.getImageUrl();
+        
+        document.getElementById('info').innerHTML = profile.getName();
 
-    firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
 
-    var rootRef = firebase.database().ref();
+        var rootRef = firebase.database().ref();
 
-    var urlRef = rootRef.child("0/" + head);
+        var urlRef = rootRef.child("0/" + head);
 
-    var lin = rootRef.child("0/1link");
+        var lin = rootRef.child("0/1link");
 
-    urlRef.on("value", function(snapshot) {
+        urlRef.on("value", function(snapshot) {
 
-      if(snapshot.val() == null || snapshot.val() == "null"){
+          if(snapshot.val() == null || snapshot.val() == "null"){
 
-        window.alert("Sorry, you cannot access this portal, Either you don't belong to Bandipur House or banned from using the portal. Please contact WebAdmin for more information. ");
+            window.alert("Sorry, you cannot access this portal, Either you don't belong to Bandipur House or banned from using the portal. Please contact WebAdmin for more information. ");
 
-        }
+          }
 
-      else{
+          else{
 
-          document.getElementById("sign").style.visibility = "hidden";
+              document.getElementById("sign").style.visibility = "hidden";
 
-          document.getElementById("si").style.visibility = "hidden";
+              document.getElementById("si").style.visibility = "hidden";
+              
+              flag = "t";
           
-          flag = "t";
-      
-          document.getElementById('info1').innerHTML = "Group : <b>" + snapshot.val() + "</b>";
+              document.getElementById('info1').innerHTML = "Group : <b>" + snapshot.val() + "</b>";
 
-          document.getElementById('g').innerHTML = "In case you haven't connected with the Group Leader of " + snapshot.val() + " please contact the WebAdmin at " ;
+              document.getElementById('g').innerHTML = "In case you haven't connected with the Group Leader of " + snapshot.val() + " please contact the WebAdmin at " ;
 
-          document.getElementById("bot").style.visibility = "visible";
+              document.getElementById("bot").style.visibility = "visible";
 
-          document.getElementById("m").style.visibility = "visible";
+              document.getElementById("m").style.visibility = "visible";
 
-      if (flag == "t"){
+              if (flag == "t"){
 
-        lin.on("value", function(snapshot) {
+                lin.on("value", function(snapshot) {
 
-        document.getElementById("but").onclick = function() {
+                    document.getElementById("but").onclick = function() {
 
-        location.replace(snapshot.val()) ;
-    }
+                        location.replace(snapshot.val()) ;
+                    }
+                });
+              }
+          }
 
-      
-
-    });
-
-    }
-      }
-
-    });
-
+        });
     
     }
     
