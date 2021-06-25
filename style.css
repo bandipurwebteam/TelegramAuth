@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sacramento&display=swap");
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  width: calc(2px * 2);
+  border: 2px solid rgba(26, 26, 26, 0);
+}
+
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+  width: calc(2px / 2);
+  border: 2px solid rgba(26, 26, 26, 0);
+}
+
+body {
+  scrollbar-face-color: rgba(255, 255, 255, 0.15);
+  scrollbar-track-color: transparent;
+}
+
+
+
+body {
+  display: grid;
+  font-family: "Sacramento", cursive;
+ color : black;
+}
+body .card1 {
+  padding: 2em;
+  border-radius: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  transform: perspective(500px);
+  transform-style: preserve-3d;
+}
+body .card1 .welcome {
+  font-family: "Sacramento", cursive;
+  transform: translateZ(20px);
+}
