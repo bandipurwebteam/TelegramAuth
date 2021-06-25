@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Authentication - Bandipur House</title>
+
+<meta name="google-signin-client_id" content="310627469637-tuatmhc8jsu2cbh1qplbtit6vmcmnovp.apps.googleusercontent.com">
+
+<meta name="viewport" content="width=device-width,;initial-scale=1.0">
+
+<link rel="stylesheet" href="./style.css">
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<style>
+
+body {
+padding-top: 100px;
+padding-left: 20px;
+padding-right: 20px;
+padding-bottom: 100px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("bg.jpg") no-repeat center ;
+}
+
+h2{ 
+  color: red;
+  font-size: 12px;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
+.header {
+   position: fixed;
+   right: 0;
+   top: 0;
+   width: 100%;
+   height : 50px;
+   color: white;
+   text-align: right;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.card {
+padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 80%;
+  border-radius: 25px;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.thing {
+
+  padding: 1rem;
+
+  width: 100%;
+
+  height: 100%;
+
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+
+  background-color: #ffffff;
+
+  border-radius: 25px;
+  
+  border-left: 0 solid #00ff99;
+
+  transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+}
+
+.thing > :first-child {
+  margin-top: 0;
+}
+
+.thing > :last-child {
+  margin-bottom: 0;
+}
+
+.heading {
+  color: #fff;
+}
+
+.gg {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 1.5rem;
+
+  background-color: #0099ff;
+
+  border-radius: 25px;
+
+  transition: 1s;
+}
+
+.gg:hover {
+ padding : 0.5rem;
+}
+
+img {
+  border-radius: 100px;
+}
+
+
+</style>
+
+</head>
+
+<body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
+
+  <center>
+
+
+
+
+
+<div class="card1">
+
+  <div id = "i"><img style="width:150px" src = 'https://iconsplace.com/wp-content/uploads/_icons/ff0000/256/png/error-icon-14-256.png'></div>
+
+  <h1 style="font-family: 'Monaco'; color: white;"> Bandipur House</h1>
+
+  <h2 id = "warn" style=" visibility : hidden;">Open this site only from the official website</h2>
+  <h6 id = "warn1" style=" visibility : hidden;">Techinical Team</h6>
+
+<center id  = "s">
+
+<div class = "card" id = "m" style="visibility : hidden;" >
+
+<h3 id = "he"></h3>
+
+<div class = "center">
+
+<center>
+<div style="display : flex; flex-direction : row; width: 100%;">
+<div class = "center"><img id = "imgg" class="avatar"></img></div>
+<div>
+
+</center>
+
+</div>
+  <div style="width: 100%;">
+<p id = "info" style = "color: black;"></p>
+
+</div>
+<div class = "card" style = "width:80%;" >
+
+  <p id = "info1">Group : </p>
+
+</div>
+</div>
+
+
+
+<p id = "si">Sign in to Continue</p>
+
+<div id = "sign" class="g-signin2" data-onsuccess="onSignIn"></div><div class="header"><button id = "o" onclick="signOut();">Sign out</button></div>
+
+<div id = "bot" style = "border : 2px, black; visibility :hidden;">
+
+
+<div class = "gg">
+
+<div class="thing">
+
+<div style="padding: 20px">
+
+<p style = "color: black;" id = "g">grp</p>
+
+<h5 style = "color: blue; word-wrap: break-word;" >bandipurwebad@student.onlinedegree.iitm.ac.in</h5>
+<div class="card">
+
+  <p id = "tt">Official Telegram Group : </p>
+
+  <button id = "but">Telegram</button>
+
+</div></div>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</center>
+
+</center>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
+
+<script>
+
+  document.getElementById("bot").style.visibility = "hidden";
+
+  document.getElementById("m").style.visibility = "hidden";
+
+  document.getElementById("o").style.visibility = "hidden";
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyB-JgzYvrruZ5aVNkAUcJktNg4n6WqdtCo",
+    authDomain: "lof-fnunho.firebaseapp.com",
+    databaseURL: "https://lof-fnunho.firebaseio.com",
+    projectId: "lof-fnunho",
+    storageBucket: "lof-fnunho.appspot.com",
+    messagingSenderId: "174519711144",
+    appId: "1:174519711144:web:b7a2234ef431c7d1c5599d"
+  };
+
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+if (false && window.name != "login-erjbewwewbewgw"){
+
+  document.getElementById("s").remove();
+  
+  alert1();
+}
+
+else{
+  document.getElementById("i").remove();
+}
+
+document.getElementById("he").innerHTML = "Signed out";
+
+function onSignIn(googleUser) {
+
+    var profile = googleUser.getBasicProfile();
+
+    var flag = "f";
+
+    var link = "";
+    
+    if (profile.getEmail().includes("@student.onlinedegree.iitm.ac.in")){
+
+    var head = profile.getEmail().split("@")[0];
+
+    document.getElementById("o").style.visibility = "visible";
+
+    document.getElementById('he').innerHTML = "Signed in";
+    
+    document.getElementById('info').innerHTML = "";
+    
+    document.getElementById('imgg').src = profile.getImageUrl();
+    
+    document.getElementById('info').innerHTML = profile.getName() + " " + head;
+
+    firebase.initializeApp(firebaseConfig);
+
+    var rootRef = firebase.database().ref();
+
+    var urlRef = rootRef.child("0/" + head);
+
+    var lin = rootRef.child("0/1link");
+
+    urlRef.on("value", function(snapshot) {
+
+      if(snapshot.val() == null || snapshot.val() == "null"){
+
+        window.alert("Sorry, you cannot access this portal, Either because you don't belong to Bandipur House or you have been banned from using the portal... ");
+        window.alert("Sorry, you cannot access this portal, Either you don't belong to Bandipur House or banned from using the portal. Please contact WebAdmin for more information. ");
+
+        }
+
+      else{
+
+          document.getElementById("sign").style.visibility = "hidden";
+          document.getElementById("si").style.visibility = "hidden";
+          
+          flag = "t";
+      
+          document.getElementById('info1').innerHTML = "You Belong to group : <b>" + snapshot.val() + "</b>";
+          document.getElementById('info1').innerHTML = "Group : <b>" + snapshot.val() + "</b>";
+
+          document.getElementById('g').innerHTML = "In case you haven't connected with the Group Leader of " + snapshot.val() + " please contact the WebAdmin at " ;
+
+          document.getElementById("bot").style.visibility = "visible";
+
+          document.getElementById("m").style.visibility = "visible";
+
+      if (flag == "t"){
+
+        lin.on("value", function(snapshot) {
+
+        document.getElementById("but").onclick = function() {
+
+        location.replace(snapshot.val()) ;
+    }
+
+      
+
+    });
+
+    }
+      }
+
+    });
+
+    
+    }
+    
+    else{
+    
+      window.alert("Sign in with your Student Mail...");
+        
+        signOut();
+    }
+
+}
+
+
+function signOut() {
+
+    var auth2 = gapi.auth2.getAuthInstance();
+    
+    auth2.signOut().then(function () {
+    
+      console.log('User signed out.');
+      
+    } );
+
+    document.getElementById('test').innerHTML = "";
+
+    document.getElementById('he').innerHTML = "Signed out";
+    
+    document.getElementById('info').innerHTML = "Sign in to Continue";
+    
+    document.getElementById('imgg').src = '';
+
+    document.getElementById("bot").style.visibility = "hidden";
+
+    document.getElementById("m").style.visibility = "hidden";
+
+    document.getElementById("o").style.visibility = "hidden";
+    
+  
+  }
+
+  function alert1() {
+
+            document.getElementById("warn").style.visibility = "visible";
+            document.getElementById("warn1").style.visibility = "visible";
+
+            
+        }
+
+  function tele() {
+        }
+
+
+</script>
+
+</body>
+
+</html>
