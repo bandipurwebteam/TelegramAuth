@@ -407,7 +407,7 @@ function signOut() {
       const googleProvider = new firebase.auth.GoogleAuthProvider();
             Firebaseauth.signInWithPopup(googleProvider)
             .then((userCread)=>{
-                console.log(userCread.user.email)
+                console.log(userCread.user.email);
                 // window.location.assign(confirm)
 
         }
