@@ -157,7 +157,10 @@ img {
   <br>
   <p id = "si" style="color: white">Sign in to Continue</p>
 
-<div id = "sign" class="g-signin2" data-onsuccess="onSignIn"></div><div class="header"><button id = "o" onclick="signOut();">Sign out</button></div>
+<div id = "sign" class="g-signin2" data-onsuccess="onSignIn()"></div>
+
+
+<div class="header"><button id = "o" onclick="signOut();">Sign out</button></div>
 
 
   <h2 id = "warn" style=" visibility : hidden;">Open this site only from the official website</h2>
@@ -230,6 +233,8 @@ img {
 
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
 
+
+
 <script>
 
   document.getElementById("bot").style.visibility = "hidden";
@@ -246,8 +251,8 @@ img {
     storageBucket: "telegramauth2.appspot.com",
     messagingSenderId: "762660936918",
     appId: "1:762660936918:web:6db63fb3c7265619babd77",
-    measurementId: "G-KZFM2WBCLK"
   };
+
   document.addEventListener('contextmenu', event => event.preventDefault());
 
 if (false && window.name != "login-erjbewwewbewgw"){
@@ -306,6 +311,7 @@ function onSignIn(googleUser) {
       else{
 
           document.getElementById("sign").style.visibility = "hidden";
+
           document.getElementById("si").style.visibility = "hidden";
           
           flag = "t";
@@ -379,6 +385,7 @@ function signOut() {
   function alert1() {
 
             document.getElementById("warn").style.visibility = "visible";
+
             document.getElementById("warn1").style.visibility = "visible";
 
             
