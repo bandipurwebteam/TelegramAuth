@@ -241,16 +241,15 @@ img {
   document.getElementById("o").style.visibility = "hidden";
 
   var firebaseConfig = {
-    apiKey: "AIzaSyANW1MMwjsLXuoHdn6-AvN0ccjPZVHpkWk",
-    authDomain: "bandipurtelegramauth.firebaseapp.com",
-    databaseURL: "https://bandipurtelegramauth-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "bandipurtelegramauth",
-    storageBucket: "bandipurtelegramauth.appspot.com",
-    messagingSenderId: "224025770478",
-    appId: "1:224025770478:web:53c55127c33a932f12f6ff",
-    measurementId: "G-FRJVTWHGLS"
+    apiKey: "AIzaSyBpJ50cUazZkRyAquQ9hNyckJO6HchuRPg",
+    authDomain: "telegramauth2.firebaseapp.com",
+    databaseURL: "https://telegramauth2-default-rtdb.firebaseio.com",
+    projectId: "telegramauth2",
+    storageBucket: "telegramauth2.appspot.com",
+    messagingSenderId: "762660936918",
+    appId: "1:762660936918:web:6db63fb3c7265619babd77",
+    measurementId: "G-KZFM2WBCLK"
   };
-
   document.addEventListener('contextmenu', event => event.preventDefault());
 
 if (false && window.name != "login-erjbewwewbewgw"){
@@ -386,32 +385,6 @@ function signOut() {
 
             
         }
-
-    function newfunc() {
-
-      var config = {
-    apiKey: "AIzaSyANW1MMwjsLXuoHdn6-AvN0ccjPZVHpkWk",
-    authDomain: "bandipurtelegramauth.firebaseapp.com",
-    databaseURL: "https://bandipurtelegramauth-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "bandipurtelegramauth",
-    storageBucket: "bandipurtelegramauth.appspot.com",
-    messagingSenderId: "224025770478",
-    appId: "1:224025770478:web:53c55127c33a932f12f6ff",
-    measurementId: "G-FRJVTWHGLS"
-  };
-
-
-      firebase.initializeApp(config);
-
-      const Firebaseauth = config.auth();
-      const googleProvider = new firebase.auth.GoogleAuthProvider();
-            Firebaseauth.signInWithPopup(googleProvider)
-            .then((userCread)=>{
-                console.log(userCread.user.email);
-                // window.location.assign(confirm)
-
-        }
-      }
 
 
 
