@@ -158,6 +158,9 @@ img {
   <p id = "si" style="color: white">Sign in to Continue</p>
 
 <div id = "sign" class="g-signin2" data-onsuccess="onSignIn"></div><div class="header"><button id = "o" onclick="signOut();">Sign out</button></div>
+  
+  <button id = "newbut" onclick="newfunc()" >Sign in</button>
+
 
   <h2 id = "warn" style=" visibility : hidden;">Open this site only from the official website</h2>
   <h6 id = "warn1" style=" visibility : hidden;">Techinical Team</h6>
@@ -384,8 +387,32 @@ function signOut() {
             
         }
 
-  function tele() {
+    function newfunc() {
+
+      var config = {
+    apiKey: "AIzaSyANW1MMwjsLXuoHdn6-AvN0ccjPZVHpkWk",
+    authDomain: "bandipurtelegramauth.firebaseapp.com",
+    databaseURL: "https://bandipurtelegramauth-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "bandipurtelegramauth",
+    storageBucket: "bandipurtelegramauth.appspot.com",
+    messagingSenderId: "224025770478",
+    appId: "1:224025770478:web:53c55127c33a932f12f6ff",
+    measurementId: "G-FRJVTWHGLS"
+  };
+
+
+      firebase.initializeApp(config);
+
+      const Firebaseauth = config.auth();
+      const googleProvider = new firebase.auth.GoogleAuthProvider();
+            Firebaseauth.signInWithPopup(googleProvider)
+            .then((userCread)=>{
+                console.log(userCread.user.email)
+                // window.location.assign(confirm)
+
         }
+      }
+
 
 
 </script>
