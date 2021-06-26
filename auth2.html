@@ -19,7 +19,7 @@
 body {
 padding-top: 100px;
 padding-left: 20px;
-padding-right: 20px;
+padding-right: 40px;
 padding-bottom: 100px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -163,11 +163,12 @@ img {
 
   <h2 id = "warn" style=" visibility : hidden;">Open this site only from the official website</h2>
   <h6 id = "warn1" style=" visibility : hidden;">Techinical Team</h6>
+  <div id = "space">
 
 <p id = "si" style="color: white;">Sign in to Continue</p>
 
 <div id = "sign" class="g-signin2" data-onsuccess="onSignIn"></div><div class="header"><button id = "o" onclick="signOut();">Sign out</button></div>
-
+  </div>
 <center id  = "s">
 
 <div class = "card" id = "m" style="visibility : hidden;" >
@@ -254,7 +255,7 @@ img {
 
   document.addEventListener('contextmenu', event => event.preventDefault());
 
-if (false && window.name != "login-erjbewwewbewgw"){
+if (window.name != "login-erjbewwewbewgw"){
 
   document.getElementById("s").remove();
   
@@ -280,6 +281,8 @@ function onSignIn(googleUser) {
     var head = profile.getEmail().split("@")[0];
 
     document.getElementById("o").style.visibility = "visible";
+      
+     document.getElementById("space").remove();
 
     document.getElementById('test').innerHTML = head;
 
@@ -302,8 +305,6 @@ function onSignIn(googleUser) {
     urlRef.on("value", function(snapshot) {
 
       if(snapshot.val() == null || snapshot.val() == "null"){
-
-        window.alert("Sorry, you cannot access this portal, Either because you don't belong to Bandipur House or you have been banned from using the portal... ");
         window.alert("Sorry, you cannot access this portal, Either you don't belong to Bandipur House or banned from using the portal. Please contact WebAdmin for more information. ");
 
         }
