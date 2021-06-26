@@ -181,12 +181,9 @@ img {
 <div class = "center"><img id = "imgg" class="avatar"></img></div>
 <div>
 <div style="width: 100%;">
-<p id = "info" style = "color: black;"></p>
-
-<p id = "test" style = "font-size: 14px;color: black;" ></p></div>
 </div>
-
-
+  
+  <p id = "info" style = "color: black;"></p>
 </div>
   <div class = "card" style = "width:100%;" >
 
@@ -281,15 +278,13 @@ function onSignIn(googleUser) {
 
     document.getElementById("o").style.visibility = "visible";
 
-    document.getElementById('test').innerHTML = head;
-
     document.getElementById('he').innerHTML = "Signed in";
     
     document.getElementById('info').innerHTML = "";
     
     document.getElementById('imgg').src = profile.getImageUrl();
     
-    document.getElementById('info').innerHTML = profile.getName();
+    document.getElementById('info').innerHTML = profile.getName() + " " + head;
 
     firebase.initializeApp(firebaseConfig);
 
