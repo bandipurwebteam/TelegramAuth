@@ -281,8 +281,6 @@ function onSignIn(googleUser) {
     var head = profile.getEmail().split("@")[0];
 
     document.getElementById("o").style.visibility = "visible";
-      
-     document.getElementById("space").remove();
 
     document.getElementById('test').innerHTML = head;
 
@@ -332,6 +330,8 @@ function onSignIn(googleUser) {
         document.getElementById("but").onclick = function() {
 
         location.replace(snapshot.val()) ;
+          
+         document.getElementById("space").remove();
     }
 
       
