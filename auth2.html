@@ -158,10 +158,14 @@ img {
 
   <div id = "i"><img style="width:150px" src = 'https://iconsplace.com/wp-content/uploads/_icons/ff0000/256/png/error-icon-14-256.png'></div>
 
-  <h1 style="font-family: 'Monaco'; color: white;"> Bandipur House</h1>
+  <h1 style="font-family: 'Monaco';"> Bandipur House</h1>
 
   <h2 id = "warn" style=" visibility : hidden;">Open this site only from the official website</h2>
   <h6 id = "warn1" style=" visibility : hidden;">Techinical Team</h6>
+
+<p id = "si" style="color: white;">Sign in to Continue</p>
+
+<div id = "sign" class="g-signin2" data-onsuccess="onSignIn"></div><div class="header"><button id = "o" onclick="signOut();">Sign out</button></div>
 
 <center id  = "s">
 
@@ -175,26 +179,22 @@ img {
 <div style="display : flex; flex-direction : row; width: 100%;">
 <div class = "center"><img id = "imgg" class="avatar"></img></div>
 <div>
-
-</center>
-
-</div>
-  <div style="width: 100%;">
+<div style="width: 100%;">
 <p id = "info" style = "color: black;"></p>
 
+<p id = "test" style = "font-size: 14px;color: black;" ></p></div>
 </div>
-<div class = "card" style = "width:80%;" >
+
+</center>
+<div class = "card" style = "width:100%;" >
 
   <p id = "info1">Group : </p>
 
 </div>
 </div>
 
+</div>
 
-
-<p id = "si">Sign in to Continue</p>
-
-<div id = "sign" class="g-signin2" data-onsuccess="onSignIn"></div><div class="header"><button id = "o" onclick="signOut();">Sign out</button></div>
 
 <div id = "bot" style = "border : 2px, black; visibility :hidden;">
 
@@ -279,13 +279,15 @@ function onSignIn(googleUser) {
 
     document.getElementById("o").style.visibility = "visible";
 
+    document.getElementById('test').innerHTML = head;
+
     document.getElementById('he').innerHTML = "Signed in";
     
     document.getElementById('info').innerHTML = "";
     
     document.getElementById('imgg').src = profile.getImageUrl();
     
-    document.getElementById('info').innerHTML = profile.getName() + " " + head;
+    document.getElementById('info').innerHTML = profile.getName();
 
     firebase.initializeApp(firebaseConfig);
 
