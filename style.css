@@ -35,7 +35,6 @@ body {
 
 body {
   display: grid;
-  font-family: "Sacramento", cursive;
  color : black;
 }
 body .card1 {
@@ -47,8 +46,15 @@ body .card1 {
           backdrop-filter: blur(20px);
   transform: perspective(500px);
   transform-style: preserve-3d;
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001,
+   inset 0px 0px 0px 0px #fff9,
+   inset 0px 0px 0px 0px #0001,
+   inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001;
 }
 body .card1 .welcome {
-  font-family: "Sacramento", cursive;
   transform: translateZ(20px);
 }
