@@ -306,7 +306,7 @@ function onSignIn(googleUser) {
 
     var urlRef = rootRef.child("0/" + head);
 
-    var lin = rootRef.child("0/1link");
+    var lin = rootRef.child("1/" + head + "lin/");
 
     urlRef.on("value", function(snapshot) {
 
